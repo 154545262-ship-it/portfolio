@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>杨金硕 | 纪录片导演 × 品牌传播策划</title>
+<meta name="description" content="杨金硕 — 纪录片导演、制片人、品牌传播策划。央视/文旅/大厂CSR 内容操盘手，擅长「政府+央媒+平台」多方生态联动。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:#0a0a0a;color:#e8e8e8;
+    font-family:'Inter','Noto Serif SC',-apple-system,sans-serif;
+    line-height:1.6;overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:#c9a57a;color:#000}
+
+  /* === NAV === */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:20px 48px;display:flex;justify-content:space-between;align-items:center;
+    transition:background .4s ease,backdrop-filter .4s ease,border-color .4s ease;
+  }
+  nav.scrolled{
+    background:rgba(10,10,10,.88);backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .nav-logo{
+    font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;
+    letter-spacing:.2em;color:#fff;text-decoration:none;
+  }
+  .nav-logo em{color:#c9a57a;font-style:italic;font-weight:400}
+  .nav-links{display:flex;gap:36px}
+  .nav-links a{
+    color:#999;text-decoration:none;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;transition:color .3s ease;position:relative;
+  }
+  .nav-links a::after{
+    content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;
+    background:#c9a57a;transition:width .3s ease;
+  }
+  .nav-links a:hover{color:#fff}
+  .nav-links a:hover::after{width:100%}
+
+  /* === HERO === */
+  .hero{
+    min-height:100vh;display:flex;flex-direction:column;
+    justify-content:center;align-items:flex-start;
+    padding:140px clamp(24px,6vw,100px) 80px;position:relative;
+    max-width:1600px;margin:0 auto;
+  }
+  .hero::before{
+    content:'';position:absolute;top:0;right:-20%;width:60%;height:100%;
+    background:radial-gradient(ellipse at center,rgba(201,165,122,.12) 0%,transparent 70%);
+    pointer-events:none;z-index:0;
+  }
+  .hero-eyebrow{
+    font-size:11px;letter-spacing:.5em;text-transform:uppercase;
+    color:#c9a57a;margin-bottom:32px;font-weight:500;
+    animation:fadeUp 1s ease .1s both;position:relative;z-index:1;
+  }
+  .hero h1{
+    font-family:'Noto Serif SC',serif;font-weight:900;
+    font-size:clamp(56px,11vw,180px);
+    line-height:.95;letter-spacing:-.01em;color:#fff;
+    animation:fadeUp 1s ease .25s both;position:relative;z-index:1;
+  }
+  .hero h1 .line2{display:block}
+  .hero h1 .amp{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    color:#c9a57a;font-size:.6em;margin:0 .08em;
+  }
+  .hero-sub{
+    font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,32px);
+    font-style:italic;color:#888;margin-top:24px;
+    letter-spacing:.06em;font-weight:400;
+    animation:fadeUp 1s ease .4s both;position:relative;z-index:1;
+  }
+  .hero-tagline{
+    font-size:clamp(14px,1.2vw,16px);color:#777;margin-top:40px;
+    max-width:520px;line-height:1.9;letter-spacing:.04em;
+    animation:fadeUp 1s ease .55s both;position:relative;z-index:1;
+  }
+  .hero-data{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:0;margin-top:72px;width:100%;max-width:800px;
+    border-top:1px solid rgba(255,255,255,.08);
+    animation:fadeUp 1s ease .7s both;position:relative;z-index:1;
+  }
+  .hero-data-item{padding:28px 0;border-right:1px solid rgba(255,255,255,.08)}
+  .hero-data-item:last-child{border-right:none}
+  .hero-data-num{
+    font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,48px);
+    font-weight:700;color:#c9a57a;line-height:1;
+  }
+  .hero-data-num .unit{font-size:.45em;color:#888;font-style:italic;margin-left:4px}
+  .hero-data-label{
+    font-size:10px;letter-spacing:.28em;color:#555;
+    text-transform:uppercase;margin-top:10px;
+  }
+  .scroll-hint{
+    position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+    font-size:10px;letter-spacing:.5em;color:#444;text-transform:uppercase;
+    animation:scrollBounce 2.5s ease infinite;
+  }
+
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  @keyframes scrollBounce{
+    0%,100%{transform:translateX(-50%) translateY(0);opacity:.4}
+    50%{transform:translateX(-50%) translateY(8px);opacity:1}
+  }
+
+  /* === SECTION SHARED === */
+  section{max-width:1600px;margin:0 auto;padding:140px clamp(24px,6vw,100px)}
+  .section-label{
+    display:flex;align-items:center;gap:16px;
+    font-size:11px;letter-spacing:.5em;text-transform:uppercase;
+    color:#c9a57a;margin-bottom:24px;
+  }
+  .section-label::before{content:'';width:48px;height:1px;background:#c9a57a}
+  .section-title{
+    font-family:'Noto Serif SC',serif;font-size:clamp(36px,5vw,72px);
+    font-weight:700;color:#fff;line-height:1.15;
+  }
+
+  /* === ABOUT === */
+  .about{
+    border-top:1px solid rgba(255,255,255,.06);
+    background:linear-gradient(180deg,#0a0a0a 0%,#0f0f0f 100%);
+  }
+  .about-grid{
+    display:grid;grid-template-columns:1fr 2fr 1fr;gap:80px;
+    margin-top:80px;align-items:start;
+  }
+  .about-col-label{
+    font-size:10px;letter-spacing:.35em;color:#c9a57a;
+    text-transform:uppercase;margin-bottom:16px;
+  }
+  .about-col h3{
+    font-family:'Noto Serif SC',serif;font-size:22px;font-weight:600;
+    color:#fff;margin-bottom:20px;line-height:1.4;
+  }
+  .about-col p{color:#888;font-size:14px;line-height:1.9;margin-bottom:16px}
+  .about-col p:last-child{margin-bottom:0}
+  .about-skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .skill-tag{
+    padding:8px 18px;border:1px solid rgba(255,255,255,.1);
+    font-size:11px;color:#aaa;letter-spacing:.06em;
+  }
+  .experience-item{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .experience-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+  .exp-year{
+    font-family:'Cormorant Garamond',serif;font-size:14px;
+    color:#c9a57a;font-style:italic;letter-spacing:.15em;
+  }
+  .exp-company{font-size:15px;color:#fff;margin:4px 0 2px;font-weight:500}
+  .exp-role{font-size:13px;color:#666}
+
+  /* === WORKS INTRO === */
+  .works-intro{
+    padding-bottom:40px;
+  }
+  .works-header{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+  .works-header-text .section-title{margin-bottom:16px}
+  .works-header-text p{color:#666;font-size:14px;max-width:400px;line-height:1.9}
+
+  /* === PROJECT CARD (LARGE FEATURED) === */
+  .project-card{
+    position:relative;display:block;margin-top:48px;cursor:pointer;
+    text-decoration:none;color:inherit;
+  }
+  .project-cover{
+    position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;
+    background:#111;
+  }
+  .project-cover img,
+  .project-cover .ph-bg{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform 1.2s cubic-bezier(.2,.8,.2,1),filter .6s ease;
+  }
+  .project-card:hover .project-cover img,
+  .project-card:hover .project-cover .ph-bg{
+    transform:scale(1.05);filter:brightness(1.12);
+  }
+  .ph-bg{
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:clamp(80px,12vw,160px);
+    color:rgba(201,165,122,.18);font-weight:700;letter-spacing:.05em;
+  }
+  .project-cover::after{
+    content:'';position:absolute;inset:0;z-index:2;
+    background:linear-gradient(to top,rgba(10,10,10,.97) 0%,rgba(10,10,10,.5) 40%,rgba(10,10,10,.2) 60%,transparent 100%);
+    pointer-events:none;
+  }
+  .project-info{
+    position:absolute;bottom:0;left:0;right:0;
+    padding:clamp(24px,4vw,56px);z-index:3;
+    display:flex;justify-content:space-between;align-items:flex-end;
+    gap:32px;flex-wrap:wrap;
+  }
+  .project-info-left{max-width:60%}
+  .project-no{
+    font-family:'Cormorant Garamond',serif;font-size:15px;
+    font-style:italic;color:#c9a57a;letter-spacing:.2em;margin-bottom:12px;
+  }
+  .project-title{
+    font-family:'Noto Serif SC',serif;font-weight:700;
+    font-size:clamp(24px,3.5vw,48px);color:#fff;line-height:1.2;
+    margin-bottom:10px;
+  }
+  .project-subtitle{font-size:14px;color:#aaa;letter-spacing:.04em}
+  .project-info-right{text-align:right}
+  .project-year{
+    font-family:'Cormorant Garamond',serif;font-size:32px;
+    font-style:italic;color:rgba(255,255,255,.25);font-weight:700;
+    line-height:1;margin-bottom:8px;
+  }
+  .project-roles{
+    font-size:11px;color:#666;letter-spacing:.15em;
+    text-transform:uppercase;
+  }
+
+  /* === PROJECT GRID (SMALLER) === */
+  .project-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px;
+  }
+  .project-card-sm{
+    position:relative;cursor:pointer;text-decoration:none;color:inherit;
+    aspect-ratio:4/3;overflow:hidden;background:#111;
+  }
+  .project-card-sm .project-info{padding:24px 28px}
+  .project-card-sm .project-cover{aspect-ratio:4/3;height:100%}
+  .project-card-sm .project-info-left{max-width:100%}
+  .project-card-sm .project-title{font-size:clamp(18px,2.2vw,26px)}
+  .project-card-sm .project-no{font-size:12px;margin-bottom:8px}
+  .project-card-sm .project-subtitle{font-size:12px}
+  /* === HOVER VIDEO PREVIEW === */
+  .project-cover video{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:0;z-index:1;pointer-events:none;
+    transition:opacity .5s ease;
+  }
+  [data-preview].is-previewing .project-cover video{opacity:1}
+  [data-preview].is-previewing .project-cover img{opacity:0;transform:none;filter:none}
+  .preview-badge{
+    position:absolute;top:18px;right:18px;z-index:4;
+    display:flex;align-items:center;gap:6px;
+    font-size:11px;letter-spacing:.14em;color:#e6e0d6;
+    background:rgba(8,8,8,.55);border:1px solid rgba(255,255,255,.22);
+    padding:7px 12px;backdrop-filter:blur(4px);
+    opacity:0;transform:translateY(-4px);
+    transition:opacity .35s ease,transform .35s ease;
+  }
+  [data-preview]:hover .preview-badge{opacity:1;transform:translateY(0)}
+  [data-preview].is-previewing .preview-badge{color:#c9a57a;border-color:rgba(201,165,122,.5)}
+
+  /* === DIVIDER === */
+  .section-divider{
+    height:1px;background:rgba(255,255,255,.06);
+    max-width:1600px;margin:0 auto;
+  }
+
+  /* === CTA === */
+  .contact{
+    text-align:center;padding:180px clamp(24px,6vw,100px);
+    border-top:1px solid rgba(255,255,255,.06);
+  }
+  .contact-label{
+    font-size:11px;letter-spacing:.5em;color:#c9a57a;
+    text-transform:uppercase;margin-bottom:40px;
+  }
+  .contact h2{
+    font-family:'Noto Serif SC',serif;font-weight:700;
+    font-size:clamp(40px,6vw,96px);color:#fff;line-height:1.1;
+    margin-bottom:48px;
+  }
+  .contact h2 em{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:#c9a57a;font-weight:400;
+  }
+  .contact-details{
+    display:flex;justify-content:center;gap:48px;flex-wrap:wrap;
+    margin-bottom:48px;
+  }
+  .contact-detail{text-align:left}
+  .contact-detail-label{
+    font-size:10px;letter-spacing:.3em;color:#555;
+    text-transform:uppercase;margin-bottom:6px;
+  }
+  .contact-detail-value{font-size:14px;color:#ccc;letter-spacing:.04em}
+  footer{
+    padding:32px 48px;border-top:1px solid rgba(255,255,255,.06);
+    text-align:center;color:#3a3a3a;font-size:10px;letter-spacing:.4em;
+    text-transform:uppercase;
+  }
+
+  /* === MODAL === */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(5,5,5,.97);
+    z-index:200;display:none;overflow-y:auto;
+    animation:fadeIn .3s ease;
+  }
+  .modal-overlay.active{display:block}
+  .modal-close{
+    position:fixed;top:28px;right:36px;z-index:210;
+    width:44px;height:44px;border:1px solid rgba(255,255,255,.15);
+    background:transparent;color:#888;font-size:22px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:all .3s ease;font-family:'Inter',sans-serif;
+  }
+  .modal-close:hover{border-color:#c9a57a;color:#c9a57a;transform:rotate(90deg)}
+  .modal-content{max-width:1000px;margin:0 auto;padding:120px 48px 80px}
+  .modal-content.has-video{max-width:1180px}
+  .modal-hero{
+    width:100%;aspect-ratio:16/9;background:#111;margin-bottom:56px;
+    overflow:hidden;position:relative;
+  }
+  .modal-hero img{width:100%;height:100%;object-fit:cover}
+  .modal-hero video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
+  .modal-hero.is-video{max-width:1180px;margin-left:auto;margin-right:auto}
+  .modal-hero .ph-bg-modal{
+    width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:100px;
+    color:rgba(201,165,122,.15);font-weight:700;letter-spacing:.05em;
+  }
+  .modal-no{
+    font-family:'Cormorant Garamond',serif;font-size:15px;
+    font-style:italic;color:#c9a57a;letter-spacing:.3em;margin-bottom:20px;
+  }
+  .modal-title{
+    font-family:'Noto Serif SC',serif;font-weight:700;
+    font-size:clamp(32px,4.5vw,60px);color:#fff;line-height:1.2;margin-bottom:8px;
+  }
+  .modal-subtitle{font-size:15px;color:#888;margin-bottom:40px;letter-spacing:.04em}
+  .modal-meta{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    margin-bottom:48px;
+  }
+  .modal-meta-item{padding:24px 0;border-right:1px solid rgba(255,255,255,.08)}
+  .modal-meta-item:last-child{border-right:none}
+  .modal-meta-label{
+    font-size:10px;letter-spacing:.3em;color:#555;
+    text-transform:uppercase;margin-bottom:8px;
+  }
+  .modal-meta-value{font-size:14px;color:#ccc;line-height:1.5}
+  .modal-body{color:#aaa;font-size:15px;line-height:1.9}
+  .modal-section{margin-top:48px}
+  .modal-section h3{
+    font-size:11px;letter-spacing:.35em;color:#c9a57a;
+    text-transform:uppercase;margin-bottom:24px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .modal-section h3::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1)}
+  .modal-section ul{list-style:none}
+  .modal-section li{
+    padding:14px 0 14px 24px;position:relative;
+    color:#999;font-size:14px;line-height:1.8;
+    border-bottom:1px solid rgba(255,255,255,.04);
+  }
+  .modal-section li::before{
+    content:'';position:absolute;left:0;top:22px;
+    width:8px;height:1px;background:#c9a57a;
+  }
+  .modal-highlight{
+    background:rgba(201,165,122,.08);border:1px solid rgba(201,165,122,.2);
+    padding:24px 28px;margin-top:24px;
+  }
+  .modal-highlight-label{
+    font-size:10px;letter-spacing:.3em;color:#c9a57a;
+    text-transform:uppercase;margin-bottom:12px;
+  }
+  .modal-highlight p{color:#ccc;font-size:14px;line-height:1.8}
+  .video-links{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+  .video-link{
+    display:flex;align-items:center;gap:16px;
+    padding:18px 24px;background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.06);
+    color:#bbb;text-decoration:none;transition:all .3s ease;font-size:14px;
+  }
+  .video-link:hover{
+    background:rgba(201,165,122,.08);border-color:rgba(201,165,122,.3);
+    color:#fff;transform:translateX(4px);
+  }
+  .video-link-num{
+    font-family:'Cormorant Garamond',serif;font-size:20px;
+    font-style:italic;color:#c9a57a;min-width:52px;
+  }
+  .video-link-arrow{margin-left:auto;color:#c9a57a;font-size:16px}
+
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  /* === REVEAL === */
+  .reveal{opacity:0;transform:translateY(40px);transition:all .9s cubic-bezier(.2,.8,.2,1)}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  /* === RESPONSIVE === */
+  @media(max-width:1100px){
+    .about-grid{grid-template-columns:1fr;gap:48px}
+    .hero-data{grid-template-columns:repeat(2,1fr)}
+    .hero-data-item:nth-child(2){border-right:none}
+    .modal-meta{grid-template-columns:repeat(2,1fr)}
+    .modal-meta-item:nth-child(2){border-right:none}
+    .project-grid{grid-template-columns:1fr}
+    .project-info{padding:24px 28px}
+    .project-info-left{max-width:100%}
+    .project-info-right{display:none}
+  }
+  @media(max-width:700px){
+    nav{padding:14px 20px}
+    .nav-links{gap:16px}
+    .nav-links a{font-size:10px;letter-spacing:.12em}
+    section{padding:100px 24px}
+    .hero{padding:120px 24px 60px;min-height:auto}
+    .hero h1{font-size:64px}
+    .hero-data{grid-template-columns:1fr 1fr;margin-top:48px}
+    .contact-details{flex-direction:column;gap:24px}
+    .modal-content{padding:100px 24px 60px}
+    .modal-meta{grid-template-columns:1fr}
+    .modal-meta-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+    .modal-meta-item:last-child{border-bottom:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar" class="scrolled">
+  <a href="#home" class="nav-logo">YANG <em>Jinshuo</em></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#content">Content</a>
+    <a href="#brand">Brand</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-eyebrow">Documentary Director × Brand Strategist</div>
+  <h1>
+    杨金硕
+    <span class="line2">影像<span class="amp">&amp;</span>传播</span>
+  </h1>
+  <div class="hero-sub">Cinema of the Real · Building Narratives That Scale</div>
+  <p class="hero-tagline">
+    纪录片导演、制片人、品牌传播策划。十年内容行业沉淀，央视/文旅/大厂 CSR 内容操盘手，<br>
+    擅长「政府 + 央媒 + 互联网平台」多方生态联动，打造兼具艺术质感与商业价值的内容项目。
+  </p>
+  <div class="hero-data">
+    <div class="hero-data-item">
+      <div class="hero-data-num">12<span class="unit">Yrs</span></div>
+      <div class="hero-data-label">Experience</div>
+    </div>
+    <div class="hero-data-item">
+      <div class="hero-data-num">6.5<span class="unit">亿</span></div>
+      <div class="hero-data-label">Annual GMV</div>
+    </div>
+    <div class="hero-data-item">
+      <div class="hero-data-num">500<span class="unit">万+</span></div>
+      <div class="hero-data-label">Content Reach</div>
+    </div>
+    <div class="hero-data-item">
+      <div class="hero-data-num">10<span class="unit">+</span></div>
+      <div class="hero-data-label">Projects</div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll to explore</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about reveal visible" id="about">
+  <div class="section-label">— About / Profile</div>
+  <h2 class="section-title">跨越镜头<br>与增长的边界</h2>
+  <div class="about-grid">
+    <div class="about-col">
+      <div class="about-col-label">Core Value</div>
+      <h3>从选题策划到全域传播<br>一个创作者的完整闭环</h3>
+      <p>大型政企媒体合作与内容项目操盘经验，沉淀央媒、多省市宣传文旅系统、互联网大厂 CSR 核心资源。</p>
+      <p>深度对接部委、省级宣传文旅单位、央级媒体机构；擅长机构创作者合作策略制定、多方生态协同、标杆案例打造。</p>
+      <div class="about-skills">
+        <span class="skill-tag">纪录片导演</span>
+        <span class="skill-tag">制片人</span>
+        <span class="skill-tag">品牌传播</span>
+        <span class="skill-tag">商务谈判</span>
+        <span class="skill-tag">政企合作</span>
+        <span class="skill-tag">全域传播</span>
+      </div>
+    </div>
+    <div class="about-col">
+      <div class="about-col-label">Career Timeline</div>
+      <div class="experience-item">
+        <div class="exp-year">2025.09 — 2026.01</div>
+        <div class="exp-company">北京芳景童行教育科技有限公司</div>
+        <div class="exp-role">自媒体总监 · 央媒联动 / 文旅共建</div>
+      </div>
+      <div class="experience-item">
+        <div class="exp-year">2019.01 — 2023.06</div>
+        <div class="exp-company">北京智通仁和科技发展有限公司</div>
+        <div class="exp-role">运营经理 / 京东 B 端自营店铺 · 年销 6.5 亿</div>
+      </div>
+      <div class="experience-item" style="border-bottom:none">
+        <div class="exp-year">2013 — 2019</div>
+        <div class="exp-company">内容行业早期积累期</div>
+        <div class="exp-role">多岗位历练 · 奠定全流程操盘能力</div>
+      </div>
+    </div>
+    <div class="about-col">
+      <div class="about-col-label">Education</div>
+      <p>国家开放大学<br><strong style="color:#fff">行政管理 · 本科</strong><br>2025 — 2027</p>
+      <div class="about-col-label" style="margin-top:32px">Awards</div>
+      <p>京东"超级伙伴"<br><span style="color:#555;font-size:12px">优秀商家代表 · 京东商家大会案例分享</span></p>
+      <p style="margin-top:16px">项目入围<br>国家广电总局"视听赋能·短剧强农"<br>乡村微短剧创作活动</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT WORKS -->
+<div class="section-divider"></div>
+<section class="works-intro reveal visible" id="content">
+  <div class="works-header">
+    <div class="works-header-text">
+      <div class="section-label">Part I — Content Creation</div>
+      <h2 class="section-title">影像作品<br>Film &amp; Content</h2>
+    </div>
+    <p>纪录片、微短剧、大型节目摄制。<br>从央视《跟着书本去旅行》到抖音中秋盛典，<br>镜头之下，是时代的真实记录。</p>
+  </div>
+</section>
+
+<!-- CONTENT PROJECTS -->
+<section style="padding-top:0" id="content-works">
+
+  <!-- Content FEATURED 1 -->
+  <a class="project-card reveal visible" data-project="banyanshenghuo">
+    <div class="project-cover">
+      <img src="./assets/banyanshenghuo-cover.png" alt="《半生烟火半台戏》" loading="lazy">
+      <div class="project-info">
+        <div class="project-info-left">
+          <div class="project-no">No. C01 — In Development</div>
+          <h3 class="project-title">《半生烟火半台戏》</h3>
+          <div class="project-subtitle">川剧非遗 · 女性现实主义 · 重庆古镇</div>
+        </div>
+        <div class="project-info-right">
+          <div class="project-year">2026</div>
+          <div class="project-roles">监制 / 品牌合作宣发</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Content FEATURED 2 -->
+  <a class="project-card reveal visible" data-project="cctv">
+    <div class="project-cover">
+      <img src="./assets/lijiang-cover-cctv.jpg" alt="丽江古城 · 华灯初上" loading="lazy">
+      <div class="project-info">
+        <div class="project-info-left">
+          <div class="project-no">No. C02 — Broadcast</div>
+          <h3 class="project-title">央视 CCTV10 · 跟着书本去旅行</h3>
+          <div class="project-subtitle">《书行丽江》五集 · 科教频道文化纪实</div>
+        </div>
+        <div class="project-info-right">
+          <div class="project-year">2025</div>
+          <div class="project-roles">编导 / 摄制</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Content FEATURED 3 -->
+  <a class="project-card reveal visible" data-project="nanping">
+    <div class="project-cover">
+      <img src="./assets/nanping.png" alt="南平文旅 · 不如吃茶去" loading="lazy">
+      <div class="project-info">
+        <div class="project-info-left">
+          <div class="project-no">No. C03 — Viral</div>
+          <h3 class="project-title">南平文旅 × 携程 · 不如吃茶去</h3>
+          <div class="project-subtitle">武夷山茶旅微短剧 · 总曝光 500 万 · 茶旅咨询 +35%</div>
+        </div>
+        <div class="project-info-right">
+          <div class="project-year">2025</div>
+          <div class="project-roles">创意策划 / 制片管控</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Content FEATURED 4 -->
+  <a class="project-card reveal visible" data-project="jiulongshan">
+    <div class="project-cover">
+      <div class="ph-bg">九</div>
+      <div class="project-info">
+        <div class="project-info-left">
+          <div class="project-no">No. C04</div>
+          <h3 class="project-title">九龙山研学 · 四集系列</h3>
+          <div class="project-subtitle">黄山文旅 × 童行书院 · K12 教育纪实</div>
+        </div>
+        <div class="project-info-right">
+          <div class="project-year">2025</div>
+          <div class="project-roles">总导演 / 制片人</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Content FEATURED 5 -->
+  <a class="project-card reveal visible" data-project="huacai">
+    <div class="project-cover">
+      <img src="./assets/qinghai.png" alt="华彩追月夜" loading="lazy">
+      <div class="project-info">
+        <div class="project-info-left">
+          <div class="project-no">No. C05</div>
+          <h3 class="project-title">华彩追月夜 · 抖音中秋</h3>
+          <div class="project-subtitle">青海篇 / 三峡篇 · 摄影 / 后期</div>
+        </div>
+        <div class="project-info-right">
+          <div class="project-year">2023</div>
+          <div class="project-roles">摄影 / 后期制作</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Content FEATURED 6 -->
+  <a class="project-card reveal visible" data-project="sunny" data-preview="">
+    <div class="project-cover">
+      <img src="./assets/sunny-cover.jpg?v=20261020c" alt="《晴天说法》" loading="lazy">
+      <video src="./assets/sunny-preview.mp4" poster="./assets/sunny-cover.jpg?v=20261020c" muted="" loop="" playsinline="" preload="none"></video>
+      <div class="preview-badge">▶ 动态预览</div>
+      <div class="project-info">
+        <div class="project-info-left">
+          <div class="project-no">No. C06</div>
+          <h3 class="project-title">晴天说法</h3>
+          <div class="project-subtitle">重案要案解读栏目 · 统筹策划</div>
+        </div>
+        <div class="project-info-right">
+          <div class="project-year">2025</div>
+          <div class="project-roles">栏目统筹 / 策划制作</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Content FEATURED 7 -->
+  <a class="project-card reveal" data-project="desert">
+    <div class="project-cover">
+      <div class="ph-bg">戈</div>
+      <div class="project-info">
+        <div class="project-info-left">
+          <div class="project-no">No. C07</div>
+          <h3 class="project-title">戈壁少年成长纪实</h3>
+          <div class="project-subtitle">对标《变形记》· 厌学叛逆少年</div>
+        </div>
+        <div class="project-info-right">
+          <div class="project-year">2025</div>
+          <div class="project-roles">总导演 / 制片人</div>
+        </div>
+      </div>
+    </div>
+  </a>
+</section>
+
+<!-- BRAND DIVIDER -->
+<div class="section-divider" style="margin-top:80px"></div>
+
+<!-- BRAND WORKS -->
+<section class="works-intro reveal" id="brand">
+  <div class="works-header">
+    <div class="works-header-text">
+      <div class="section-label">Part II — Brand Communication</div>
+      <h2 class="section-title">品牌传播<br>Partnership &amp; Growth</h2>
+    </div>
+    <p>国家级政企项目操盘，<br>政府 + 央媒 + 大厂 CSR 多方联动，<br>十亿级资源整合，亿级 GMV 实战经验。</p>
+  </div>
+</section>
+
+<!-- BRAND PROJECTS -->
+<section style="padding-top:0" id="brand-works">
+
+  <!-- Brand FEATURED 1 -->
+  <a class="project-card reveal" data-project="fengshou2025">
+    <div class="project-cover" style="aspect-ratio:16/8">
+      <img src="./assets/fengshou-cover.jpg" alt="2025 中国农民丰收节 · 乡村电影周" loading="lazy">
+      <div class="project-info">
+        <div class="project-info-left">
+          <div class="project-no">No. B01 — National</div>
+          <h3 class="project-title">2025 中国农民丰收节 · 乡村电影周</h3>
+          <div class="project-subtitle">农业农村部主办 · 唐县落地 · 王宝强文艺志愿者 · 影旅融合标杆</div>
+        </div>
+        <div class="project-info-right">
+          <div class="project-year">2025</div>
+          <div class="project-roles">项目统筹</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Brand FEATURED 2 -->
+  <a class="project-card reveal" data-project="fengshou2023">
+    <div class="project-cover">
+      <img src="./assets/jd2023-cover.jpg" alt="2023 丰收节 · 京东农特产购物节" loading="lazy">
+      <div class="project-info">
+        <div class="project-info-left">
+          <div class="project-no">No. B02 — National</div>
+          <h3 class="project-title">2023 丰收节 · 京东农特产购物节</h3>
+          <div class="project-subtitle">十亿补贴 · 2000+ 产业带 · 政府-央媒-平台联动模板</div>
+        </div>
+        <div class="project-info-right">
+          <div class="project-year">2023</div>
+          <div class="project-roles">项目统筹</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Brand FEATURED 3 -->
+  <a class="project-card reveal" data-project="jd-retail">
+    <div class="project-cover">
+      <div class="ph-bg" style="color:rgba(255,80,80,.25)">6.5亿</div>
+      <div class="project-info">
+        <div class="project-info-left">
+          <div class="project-no">No. B03 — Commercial</div>
+          <h3 class="project-title">京东 B 端自营店铺 · 3C 数码家电</h3>
+          <div class="project-subtitle">2021 全年 6.5 亿 GMV · 双11 单日 1300 万 · 京东"超级伙伴"</div>
+        </div>
+        <div class="project-info-right">
+          <div class="project-year">2019-2023</div>
+          <div class="project-roles">运营经理</div>
+        </div>
+      </div>
+    </div>
+  </a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
+  <div class="contact-label">— Let's Create Together</div>
+  <h2>
+    有故事需要被记录？<br>
+    <em>让我们开始吧。</em>
+  </h2>
+  <div class="contact-details">
+    <div class="contact-detail">
+      <div class="contact-detail-label">Phone</div>
+      <div class="contact-detail-value">186 0097 9508</div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-label">WeChat</div>
+      <div class="contact-detail-value">YQ883874</div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-label">Email</div>
+      <div class="contact-detail-value">154545262@qq.com</div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-label">Location</div>
+      <div class="contact-detail-value">北京 · Beijing</div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Yang Jinshuo · Documentary &amp; Brand Portfolio · All Rights Reserved</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+// ============== PROJECT DATA ==============
+const P = {
+
+  // ===== CONTENT =====
+  banyanshenghuo: {
+    no: 'No. C01 — In Development',
+    title: '《半生烟火半台戏》',
+    subtitle: '川剧非遗 · 女性现实主义 · 重庆古镇 · 横屏短剧',
+    heroImg: './assets/banyanshenghuo-cover.png', heroText: null,
+    year: '2026.09 — 至今',
+    role: '项目监制 / 品牌合作宣发',
+    genre: '非遗 · 乡村振兴 · 国家项目',
+    body: `<p>国家广电总局、农业农村部指导"视听赋能·短剧强农"乡村微短剧创作活动入围项目。以川剧非遗文化为内核，讲述一位中年川剧女演员在家庭变故后重返舞台的故事，融合重庆古镇实景与川剧真功夫表演。</p><p>联合出品方为中国农影（70+ 年影视积淀，金鸡奖最佳科教片，CCTV-17 主要制作力量）与 Y u P o d M e d i a。剧本已定稿，目前处于立项、组盘、融资阶段。</p>`,
+    sections: [
+      {
+        h: '核心职责',
+        items: [
+          '设计政企媒多方内容共创策略，牵头对接四川省文旅厅、农业农村厅、重庆市委宣传部，推动政府机构作为共创方参与',
+          '联动字节 CSR、长短视频平台，推进联合出品、流量扶持、版权共建，搭建「政府机构 + 央媒 + 互联网平台」内容共创生态',
+          '策划阶段前置内容合规研判，将川剧非遗、重庆地方文旅资源融入创作，沉淀非遗乡村项目合作范式'
+        ]
+      },
+      {
+        h: '制作方案',
+        items: [
+          '<strong>重庆实景</strong> — 古镇、老居民区与剧场棚景结合，兼顾城市辨识度和拍摄可控性',
+          '<strong>川剧真功夫</strong> — 与专业川剧院团或传承人合作，变脸、吐火、高腔、水袖均按真实规范呈现',
+          '<strong>实力派群像</strong> — 女主扛现实主义情感强度；前夫、吴爷爷以老戏骨提升质感；青年角色负责代际入口'
+        ]
+      },
+      {
+        h: '联合出品方',
+        items: [
+          '<strong>中国农影</strong> · 1949 年起步，近 1000 部农业题材影片，金鸡奖 + 华表奖 + 300 余次部级奖，CCTV-17 主要制作力量',
+          '<strong>Y u P o d M e d i a</strong> · 影视投资与精品短剧出品方，代表作品《宝劈龙》《疯狂的锤子》《捕心师》'
+        ]
+      }
+    ],
+    highlight: {
+      label: '项目状态',
+      text: '<strong>剧本已定稿</strong>，进入立项、组盘、融资阶段。从立项到交付预计 <strong>6—7 个月</strong>。诚邀具备长视频平台、影视制作、重庆文旅或川剧院团资源的合作伙伴共同推进。'
+    }
+  },
+
+  cctv: {
+    no: 'No. C02 — Broadcast',
+    title: '央视 CCTV10 · 跟着书本去旅行',
+    subtitle: '科教频道 · 文化纪实 ·《书行丽江》五集',
+    heroImg: './assets/lijiang-cover-cctv.jpg', heroText: null,
+    year: '2025',
+    role: '编导 / 摄制',
+    genre: '文化体验类真人秀 · 央媒',
+    body: `<p>参与央视 CCTV-10 科教频道《跟着书本去旅行》的编导与摄制工作，牵头策划并促成栏目落地云南丽江，完成《书行丽江》五集系列专题。以课本与诗文为线索，联动地方政府与专家资源，实现央媒 + 抖音多渠道传播。</p><p>其他城市省份选题表，根据保密协议无法共享。</p>`,
+    sections: [
+      {
+        h: '栏目背景',
+        items: [
+          '中央电视台科教频道（CCTV-10）出品，2001 年 7 月 9 日开播，以教育、科学、文化题材为核心内容。',
+          '《跟着书本去旅行》为 2019 年 CCTV-10 改版后推出的文化体验类真人秀，以中小学课本为载体，组织学生赴课文所提及的景点研学旅行，由专家、学者与当地居民深入解读景点与时代背景。',
+          '节目力图寓教于乐，让学生真听、真看、真感受，既稳重有内涵、又不失活泼趣味，亦带动当地旅游发展，兼顾社会效益与经济效益。'
+        ]
+      },
+      {
+        h: '播出规格',
+        items: [
+          '单集 20 分钟（日播），5 集 / 系列（每周）。',
+          '播出平台：CCTV-10 科教频道；首播 周一至周五 16:49，重播 次日 01:43。',
+          '央视网同步多终端覆盖，预计拍摄 1000 集。',
+          '预计首播观看人数超 5000 万，主流网站浏览量约 1 亿，全网视频累计播放量超 3 亿次。'
+        ]
+      },
+      {
+        h: '分集介绍 ·《书行丽江》',
+        items: [
+          '<strong>第一集《古城密码》</strong> — 以清代丽江知府管学宣《瓦屋》"依山结屋俯清流"为核心，解码丽江古城顺应地势、临水而居的布局智慧。从"青瓦鳞鳞"的街巷网络，到"门前流水"的网状水系，走进典型院落，看"疏棂""矮墙"如何在私密院落与自然景致之间引景入室，感受纳西族"天人合一"的营造哲学。',
+          '<strong>第二集《古城回响》</strong> — 跟随阿来《一滴水经过丽江》，以水为眼、以心为舟。沿水巷漫步找寻"三河穿城"的水系脉络，聆听纳西族"水头"讲述古老的水系管理智慧；探访四方街、木府、花巷，在"古乐小院"听《白沙细乐》，感受"水声与古乐"的共生，见证古城从"三赕城"到"世界文化遗产"的千年变迁。',
+          '<strong>第三集《西南紫禁》</strong> — 以《徐霞客游记》"宫室之丽，拟于王者"为线索走进木府。依托《丽江木氏宦谱》等文献，解读木府作为"西南紫禁城"的建筑格局与文化象征。沿中轴线从忠义坊到三清殿，剖析其建筑规制与礼制内涵；步入万卷楼，感受木氏家族研习中原文化的深度，观察纳西庭院如何融合汉地园林意境与本土自然观。',
+          '<strong>第四集《文谊雪山》</strong> — 跟随徐霞客与木增的酬唱诗词走进木府，回溯木增 11 岁世袭土司、安国兴邦"文治武功"的传奇生平。走进"解脱林"重现二人初晤的灵魂共鸣，踏访万卷楼重温"连宵篝灯，论文甚畅"的十日盘桓，致敬这位编纂典籍、推动汉纳文化深度交融的纳西俊杰。',
+          '<strong>第五集《玉龙雪境》</strong> — 跟随明代诗人程本立《丽江雪山》、徐霞客《滇游日记》与阿来《一滴水经过丽江》，深入玉龙纳西族自治县。听专家解读雪山形成，寻访"九千仞""雪幕其顶""日光映之""一滴水"等诗文意境的来源与再现，并与纳西族"三多神"信仰相印证，理解雪山在民族精神世界中的崇高地位。'
+        ]
+      },
+      {
+        h: '主书本 · 诗文线索',
+        items: [
+          '清 · 管学宣《瓦屋》——"依山结屋俯清流，青瓦鳞鳞映碧畴。"',
+          '当代 · 阿来《一滴水经过丽江》——"我是一片雪，轻盈地落在了玉龙雪山顶上……我变成了一滴水。"',
+          '明 · 徐霞客《丽江纪游》——"木府崇楼冠边州，玉河环带映丹甍。"',
+          '明 · 木增《文笔凌云》——"列岫层峦皆几案，行云流水尽文案。"',
+          '明 · 程本立《丽江雪山》——"玉龙峰高九千仞，日色晦明云气寒。"'
+        ]
+      },
+      {
+        h: '项目价值',
+        items: [
+          '<strong>提升文化素养</strong> — 以独特自然风光与历史人文让孩子开眼看世界、学以致用；以高雅而深刻的人文内涵提升修养、启迪心智。',
+          '<strong>促进地方发展</strong> — 以文化带动地方旅游与经济发展，活跃当地美人、美景、美食，共享文化自信的生态圈。',
+          '<strong>权威媒体背书</strong> — 依托独一无二的权威媒体平台，为当地政府背书，更具权威性与公信力。'
+        ]
+      }
+    ],
+    links: [
+      { num: 'EP', title: 'CCTV 播出页面', url: 'https://tv.cctv.com/2025/12/01/VIDEbPJYIG2yXbcLK6xqXyp2251201.shtml' }
+    ]
+  },
+
+  nanping: {
+    no: 'No. C03 — Viral',
+    title: '南平文旅 × 携程 · 不如吃茶去',
+    subtitle: '3集横屏短剧 · 穿越轻喜剧 · 大红袍传奇',
+    heroImg: './assets/nanping.png', heroText: null,
+    year: '2025.05 — 2025.06',
+    role: '创意策划 / 制片管控',
+    genre: '文旅微短剧 · 福建省旅发大会',
+    body: `<p>2025 福建省旅发大会重点项目，南平文旅局与携程联合出品。以武夷山大红袍传说为内核，讲述明朝状元丁显穿越到现代南平，与汉服博主林春暖携手，以茶为线索寻找"穿越"的"茶痴"皇帝朱元璋，最终促成大红袍成为皇家贡茶的传奇故事。</p><p>3 集横屏短剧，共计约 10 分钟。穿越 / 文旅风光 / 轻喜剧类型。自然立体展现南平茶文化美感与茶旅趣味，打造比传统宣传片更好的文旅种草效果。出品方：北京青松志文化传播有限公司。</p>`,
+    sections: [
+      {
+        h: '核心职责',
+        items: [
+          '牵头南平文旅局与携程的商务对接，主导茶旅迷你短剧全案',
+          '统筹创意策划、制片管控、预算与后期交付，熟悉政务文旅短剧报审风控流程',
+          '联动携程流量矩阵与地方文旅渠道搭建整合传播方案，打通内容种草到旅游产品转化链路'
+        ]
+      },
+      {
+        h: '故事大纲',
+        items: [
+          '<strong>第一集</strong> — 皇帝下江南途中失踪！新科状元丁显自告奋勇，醒来发现自己穿越到现代酒店，遇到身上带着皇帝玉佩的汉服博主林春暖，恍然大悟：皇帝和自己一起穿越到了南平！',
+          '<strong>第二集</strong> — 以皇帝"茶痴"特点为线索，以拍摄 vlog 名义探索南平茶旅项目、现代茶厂，品尝茶园美食。丁显用失传手法泡茶作画意外上热搜，林春暖灵机一动：用流量发动全南平找皇帝！',
+          '<strong>第三集</strong> — 网友助力，丁显找到正陶醉享用"半米茶席"的皇帝。皇帝出逃缘由：<em>"朕苦苦打拼一辈子，才知沧海一粟，春光苦短，不如吃茶去！"</em> 丁显穿越回古代，奉旨为茶树披红袍，大红袍从此成为皇家贡茶。'
+        ]
+      },
+      {
+        h: '创意亮点',
+        items: [
+          '打造"大红袍"茶旅名片 — 武夷岩茶 + 明朝洪武年传说，让观众因大红袍记住南平',
+          '"云旅游"种草南平风光 — 剧情自然融入自然美景、人文风光、美食小吃，高质感画面',
+          '弘扬非遗与传统茶文化 — 通过古人视角"科普"建盏、茶百戏等非遗文化'
+        ]
+      },
+      {
+        h: '制作计划',
+        items: [
+          '6.5 — 故事脚本 & 资源确认',
+          '6.6-6.10 — 勘景',
+          '6.12 — 1st PPM 主创团队 / 美术方案',
+          '6.14 — FINAL PPM 确认所有拍摄事项',
+          '6.17-6.19 — 拍摄日',
+          '6.25 — A copy 提交（含分镜脚本 / 服装造型）',
+          '6.27 — B copy 提交（含海报 / 封面设计）',
+          '6.28 — 正片成片提交并发布'
+        ]
+      }
+    ],
+    highlight: {
+      label: '项目成果',
+      text: '总曝光 <strong>500 万</strong>，茶旅产品咨询环比 <strong>+35%</strong>。复盘沉淀「内容创作 + 地方机构 + 平台联动」可复用运营模式，实现流量向地方品牌价值转化。'
+    },
+    links: [
+      { num: 'EP.01', title: '第一集 · 穿越武夷山', url: 'https://v.douyin.com/8OGcxkzao3M/' },
+      { num: 'EP.02', title: '第二集 · 寻茶南平', url: 'https://v.douyin.com/6NMiPxXliJ4/' },
+      { num: 'EP.03', title: '第三集 · 半米茶席', url: 'https://v.douyin.com/4NvUvd9KsTo/' }
+    ]
+  },
+
+  jiulongshan: {
+    no: 'No. C04',
+    title: '九龙山研学 · 四集系列纪录片',
+    subtitle: '安徽黄山文旅 × 童行书院',
+    heroImg: null, heroText: '九龙山',
+    year: '2025',
+    role: '总导演 / 制片人',
+    genre: 'K12 教育纪实 · 4 集系列',
+    body: `<p>北京芳景童行教育科技有限公司出品，记录 K12 通识素质教育家庭在安徽黄山九龙山的深度研学之旅。从户外探索到人文思辨，每一集都是一次独立的教育体验，共同构成当代家庭教育的真实图景。</p>`,
+    sections: [
+      { h: '节目列表', items: ['预告片（有水印版）', '第一期', '第二期', '第三期', '第四期 · 收官'] }
+    ]
+  },
+
+  huacai: {
+    no: 'No. C05',
+    title: '2023 华彩追月夜 · 抖音中秋盛典',
+    subtitle: '大型综艺中秋特别节目',
+    heroImg: './assets/qinghai.png', heroText: null,
+    year: '2023',
+    role: '摄影 / 后期制作',
+    genre: '综艺 · 大型活动',
+    body: `<p>参与制作拍摄抖音中秋盛典「2023 华彩追月夜」，负责青海篇与三峡篇的实地拍摄与后期制作。节目以「故乡的云」「写给故乡的话」为情感内核，展现不同地域的中秋文化与人文风情。</p>`,
+    sections: [],
+    links: [
+      { num: 'PT.01', title: '青海篇 · 故乡的云', url: 'https://v.douyin.com/PT__G1KWaYQ/' },
+      { num: 'PT.02', title: '三峡篇 · 写给故乡的话', url: 'https://v.douyin.com/S8v4FrAdj7M/' }
+    ]
+  },
+
+  sunny: {
+    no: 'No. C06',
+    title: '《晴天说法》',
+    subtitle: '重案要案解读栏目',
+    heroImg: './assets/sunny-cover.jpg?v=20261020c', heroText: null,
+    video: './assets/sunny-preview.mp4',
+    year: '2025',
+    role: '栏目统筹 / 策划制作',
+    genre: '法制纪实',
+    body: `<p>任职于北京其乐无穷文化娱乐有限公司期间，统筹策划制作《晴天说法》栏目。针对国内特大重案要案进行深度解读，以纪实手法还原案件脉络，传递法治精神。</p>`,
+    sections: []
+  },
+
+  desert: {
+    no: 'No. C07',
+    title: '戈壁沙漠徒步 · 少年成长纪实',
+    subtitle: '对标湖南卫视《变形记》',
+    heroImg: null, heroText: '戈壁',
+    year: '2023',
+    role: '统筹 / 策划',
+    genre: '社会纪实',
+    body: `<p>2023 年统筹拍摄策划作品，聚焦厌学叛逆少年群体。通过戈壁沙漠徒步的极端环境，记录少年们在身体与精神双重考验下的真实成长与蜕变。</p>`,
+    sections: []
+  },
+
+  // ===== BRAND =====
+  fengshou2025: {
+    no: 'No. B01 — National',
+    title: '2025 中国农民丰收节 · 乡村电影周',
+    subtitle: '国家级文旅演艺嘉年华',
+    heroImg: './assets/fengshou-cover.jpg', heroText: null,
+    year: '2025.09 — 2025.10',
+    role: '项目统筹',
+    genre: '国家级公益 · 农业农村部主办',
+    body: `<p>国家级文旅演艺嘉年华，由农业农村部、中国农影主办，落地河北唐县。整合文艺志愿者、文旅景区、地方产业品牌与媒体资源，打造"电影 + 文旅 + 产业"公益嘉年华标杆。</p>`,
+    sections: [{
+        h: '活动概况',
+        items: [
+          '<strong>时间地点</strong> — 2025 年 10 月 17 日晚 19 时，河北保定唐县唐尧古镇碧波天水营地。',
+          '<strong>主题</strong> — “光影同行 唐县有约”。以太行山水为天然幕台、丰收大地为庆丰看席，采取“光影 + 丰收”嘉年华形式，融合电影艺术与乡土文化。',
+          '<strong>主办与举办地</strong> — 农业农村部办公厅、中国电影家协会、中国农业电影电视中心、中国老区建设促进会、中国世界电影学会 2018 年发起；2025 年设河北邢台南和、保定唐县两个主场，以“光影里的乡土中国”为主线。'
+        ]
+      }
+      ,
+      {
+        h: '核心职责',
+        items: [
+          '大型线下文旅演艺嘉年华全链路统筹，对接农业农村部、唐县地方政府、主办单位',
+          '统筹王宝强等文艺志愿者对接，负责挖掘艺人商业与传播联动价值',
+          '整合文旅景区、地方产业品牌、媒体资源，设计文旅线路联名、品牌露出植入、资源置换合作'
+        ]
+      }
+      ,
+      {
+        h: '四大篇章',
+        items: [
+          '丰收礼赞 · 硕果盈仓悦唐尧',
+          '英雄热土 · 红色血脉润山河',
+          '产业腾飞 · 绿野沃土育新机',
+          '时代征程 · 光影流彩绘新篇'
+        ]
+      }
+      ,
+      {
+        h: '现场亮点',
+        items: [
+          '<strong>乡村公益电影放映启动</strong> — 农业农村部总畜牧师王乐君宣布启动，公益电影从唐县走向全国乡村、走进革命老区。',
+          '<strong>乡村电影记忆开场</strong> — 老式放映机的“咔哒”声引出情景小剧场，衔接“泥韵丝吟”陶笛非遗表演；乌兰图雅演绎《回马枪》，传统曲艺与现代编曲碰撞。',
+          '<strong>两代放映人</strong> — 扎根乡村 46 年的退伍老兵、革命老区放映员王英杰肩扛胶片箱登台。',
+          '<strong>推荐影片快闪</strong> — 援疆题材影片《阿克达拉》主创与保定援疆团队跨三千公里隔空对话。',
+          '<strong>影旅联动</strong> — 王宝强撕下复古票根副券，启动“跟着电影游唐县”路线；今年为中国电影诞生 120 周年，保定籍歌唱家王凯演唱《给电影人的情书》。',
+          '<strong>文艺志愿者</strong> — 王宝强、孙茜、刘劲、卢奇、啜妮、王金玉、刘之冰、丁柳元、王凯、乌兰图雅、阿吉太组合等获赠纪念册。'
+        ]
+      }
+      ,
+      {
+        h: '产业与文旅联动 · 唐县肉羊',
+        items: [
+          '唐县“七山一水二分田”，草场 22.5 万亩；肉羊年存栏超 400 万只、年出栏 800 万只、年产值突破 200 亿元，占北京羊肉市场三成份额，辐射近 40 万人就业，是华北地区最大肉羊集散地。',
+          '现场发布吉祥物<strong>“唐咩咩”</strong>——身着唐装的小尾寒羊，羊角造型寓意“千年农耕情”与“百亿羊产业梦想”，金色衣襟代表大地丰收底色。',
+          '联动“跟着电影游唐县”全景式联动直播、丰收市集、斗羊大赛、肉羊估重比赛、剪羊毛大赛、庆都山及养殖参观等民俗活动；同期举办“第三届中国 · 河北唐县肉羊产业高质量发展大会”。'
+        ]
+      }],
+    highlight: {
+      label: '项目成果',
+      text: '落地国家级"电影 + 文旅 + 产业"公益嘉年华，启动全国乡村公益电影放映行动。实现<strong>红色文化传播、县域文旅曝光、地方特色产业推广</strong>多重公益价值。'
+    },
+    links: [
+      { num: 'NEWS', title: '农视网 · 唐县乡村电影之夜报道', url: 'https://rmtsource.ntv.cn/files/app/nyapp/html/News/1/301/991301717.html' }
+    ]
+  },
+
+  fengshou2023: {
+    no: 'No. B02 — National',
+    title: '2023 丰收节 · 京东农特产购物节',
+    subtitle: '农业农村部指导 · 十亿补贴',
+    heroImg: './assets/jd2023-cover.jpg', heroText: null,
+    year: '2023.07 — 2023.09',
+    role: '项目统筹',
+    genre: '国家级公益 · 电商助农',
+    body: `<p>中国农民丰收节组织指导委员会指导、中国农影主办，全国扶贫宣传教育中心协办、京东集团支持的国家级“庆丰收 促和美”主题活动。2023 年 9 月 19 日在北京举行，首次实现丰收节庆群众展演与头部电商助农的联动。</p>`,
+    sections: [{
+        h: '活动概况',
+        items: [
+          '<strong>时间地点</strong> — 2023 年 9 月 19 日，北京。',
+          '<strong>全称</strong> — 2023 年中国农民丰收节全国农民群众庆丰收展演暨京东农特产购物节。',
+          '<strong>组织架构</strong> — 中国农业电影电视中心主办，全国扶贫宣传教育中心协办，京东集团支持；展演活动由中国农民丰收节组织指导委员会指导，是当年创新推出的全国性重点活动。',
+          '<strong>主题与宗旨</strong> — 主题“庆丰收 促和美”，宗旨“庆祝丰收、弘扬文化、振兴乡村”，坚持“农民节日农民办、农民节日为农民”。',
+          '<strong>官方定调</strong> — 农业农村部党组成员夏更生致辞，希望广大电商平台、商超企业开展多领域、多层次、多元化的产销对接和促消费活动，打通产销对接大动脉，帮助农民把收成变收入。',
+          '<strong>现场规模</strong> — 地方政府、行业协会、专家学者、参演团队、企业代表、媒体代表等 400 余人参加。'
+        ]
+      }
+      ,
+      {
+        h: '核心职责',
+        items: [
+          '牵头对接农业农村部、中国农影、京东零售高管团队，完成多方商务谈判',
+          '推动京东作为官方合作单位入场，落地平台<strong>十亿补贴资源</strong>',
+          '整合 20+ 主流媒体与全国产业带资源，设计联合宣发合作机制'
+        ]
+      }
+      ,
+      {
+        h: '展演亮点 · 让农民唱主角',
+        items: [
+          '<strong>节目征集机制</strong> — 设立中国农民丰收节文艺节目储备库，通过全国征集与各地遴选推介相结合，征集到 300 多个文艺节目，最终筛选出 <strong>10 个</strong>丰收主题鲜明、群众喜闻乐见、农民自导自演的节目团队登台。',
+          '<strong>节目形式</strong> — 舞蹈、戏歌、合唱、情景剧等，唱响丰收主题曲、舞动农民新风采、传播振兴好声音。',
+          '<strong>代表性节目</strong> — 国家级非物质文化遗产彝族三弦舞《阿细跳月》、情景舞台剧《茶农匠心》、舞蹈《共同富裕》、《大国粮仓》、《耍老虎闹丰年》。',
+          '<strong>主办方定位</strong> — 中国农影党委书记、主任、总编辑宁启文表示，中国农影作为党的“三农”宣传“第一方阵”，策划推出本次活动让农民登台唱主角，并全媒体联动吹响丰收号角。'
+        ]
+      }
+      ,
+      {
+        h: '第二届京东农特产购物节 · 惠农举措',
+        items: [
+          '<strong>线下启动</strong> — 活动现场举办第二届京东农特产购物节线下启动仪式，京东发布针对农特产的多项惠农助农举措。',
+          '<strong>资源投入</strong> — 京东投入<strong>十亿元现金补贴与流量资源</strong>，通过“百亿补贴”“溯源直播”等活动形式，让消费者以更实惠的价格买到更多优质农特产品。',
+          '<strong>平台成果</strong> — 京东零售集团 CEO 辛利军介绍：自 2020 年 10 月启动乡村振兴“奔富计划”以来，京东已与全国超 <strong>2000 个产业带</strong>达成深度合作，并于 2023 年 6 月提前完成“三年带动农村超过一万亿产值”目标。'
+        ]
+      }
+      ,
+      {
+        h: '奖项与互动交流',
+        items: [
+          '<strong>优秀表演奖</strong> — 农业农村部党组成员夏更生、农业农村部市场与信息化司司长唐珂、京东零售集团 CEO 辛利军为获奖代表颁奖。',
+          '<strong>魅力农产品奖</strong> — 原农业部党组成员、中国农产品市场协会会长张玉香，农业农村部农产品质量安全中心副主任王子强，全国扶贫宣传教育中心副主任伍小华为获奖代表颁奖。',
+          '<strong>获奖名单</strong> —《阿细跳月》《大国粮仓》《茶农匠心》《耍老虎闹丰年》《共同富裕》等 10 支优秀表演团队；“江永香芋”“庆阳苹果”“库尔勒香梨”等 8 个魅力农产品。',
+          '<strong>地方交流</strong> — 广东省农业农村厅总经济师罗一心、江西省农业农村产业发展服务中心党委书记刘长城、甘肃省庆阳市政府副秘书长张海鸿、山东省威海市商务局党组成员、副局长李洪伟现场讲述丰收故事、交流丰收经验。'
+        ]
+      }
+      ,
+      {
+        h: '出席阵容',
+        items: [
+          '<strong>农业农村部</strong> — 党组成员夏更生；市场与信息化司司长、中国农民丰收节组织指导委员会办公室主任唐珂；乡村产业发展司副司长刁新育；农产品质量安全中心副主任王子强。',
+          '<strong>中国农影</strong> — 党委书记、主任、总编辑宁启文；党委副书记、纪委书记孙密宏；党委委员、副主任庞博；党委委员、办公室（党办）主任张天佑。',
+          '<strong>京东集团</strong> — 京东零售集团 CEO 辛利军；京东集团执行副总裁王启斌；京东集团副总裁贾晓波；京东零售 CEO 特别助理、京东零售战略与综合支持部负责人王雄。',
+          '<strong>其他单位</strong> — 原农业部党组成员、中国农产品市场协会会长张玉香；全国扶贫宣传教育中心副主任伍小华。'
+        ]
+      }],
+    highlight: {
+      label: '项目成果',
+      text: '打通政府 - 央媒 - 头部电商合作链路：落地<strong>十亿元惠农补贴</strong>与“百亿补贴”“溯源直播”等举措，赋能全国 <strong>2000+ 农特产业带</strong>，助力京东提前完成“三年带动农村超一万亿产值”目标，沉淀国家级节庆政企商务合作模板。'
+    },
+    links: [
+      { num: 'NEWS', title: '农视网 · 2023 丰收节展演暨京东农特产购物节报道', url: 'https://mp.weixin.qq.com/s/IessJNhYTrYis2RHc2x3Qg' }
+    ]
+  },
+
+  'jd-retail': {
+    no: 'No. B03 — Commercial',
+    title: '京东 B 端自营店铺 · 3C 数码家电',
+    subtitle: '商业运营实战',
+    heroImg: null, heroText: '6.5亿',
+    year: '2019.01 — 2023.06',
+    role: '运营经理',
+    genre: 'B 端电商 · 3C 数码家电',
+    body: `<p>北京智通仁和科技发展有限公司，负责京东慧采 B 端店铺全链路运营。四年间从零打造出年销 6.5 亿的超级店铺。</p>`,
+    sections: [
+      {
+        h: '核心职责',
+        items: [
+          '负责京东慧采 B 端店铺全链路运营，联动采销、驻场、质控多团队保障端口稳定',
+          '主导店铺产品线扩充，统筹新增品牌资质准入审核，把控商品准入风险',
+          '统筹店铺定价履约管理，结合市场行情协同平台调价，规范厂家自送、延迟发货流程',
+          '挖掘平台 B 端项目商机，拆解客户需求输出报价，跟进项目流程闭环'
+        ]
+      },
+      {
+        h: '关键业绩',
+        items: [
+          '2020 年接手 B 端自营店铺，协同团队实现业务突破；<strong>双11 单日销售额 1300 万元，类目第一</strong>',
+          '2021 年全年 B 端自营销售额 <strong>6.5 亿元</strong>',
+          '店铺获评京东"超级伙伴"，作为优秀商家代表在京东商家大会做案例分享'
+        ]
+      }
+    ]
+  }
+};
+
+// ============== NAV SCROLL ==============
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ============== REVEAL ==============
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ============== MODAL ==============
+const modal = document.getElementById('modal');
+const modalContent = document.getElementById('modalContent');
+
+document.querySelectorAll('[data-project]').forEach(card => {
+  card.addEventListener('click', (e) => {
+    e.preventDefault();
+    const pv = card.querySelector('video');
+    if (pv) pv.pause();
+    card.classList.remove('is-previewing');
+    openModal(card.dataset.project);
+  });
+});
+
+// 鼠标悬停：静音自动播放本期视频预览
+document.querySelectorAll('[data-preview]').forEach(card => {
+  const video = card.querySelector('video');
+  if (!video) return;
+  card.addEventListener('mouseenter', () => {
+    card.classList.add('is-previewing');
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  });
+  card.addEventListener('mouseleave', () => {
+    card.classList.remove('is-previewing');
+    video.pause();
+  });
+});
+
+function openModal(key) {
+  const d = P[key];
+  if (!d) return;
+
+  // Hero
+  const heroHtml = d.video
+    ? `<div class="modal-hero is-video"><video src="${d.video}" controls autoplay muted playsinline preload="metadata"></video></div>`
+    : d.heroImg
+      ? `<div class="modal-hero"><img src="${d.heroImg}" alt="${d.title}"></div>`
+      : `<div class="modal-hero"><div class="ph-bg-modal">${d.heroText || ''}</div></div>`;
+
+  // Meta
+  const metaHtml = `
+    <div class="modal-no">${d.no}</div>
+    <h1 class="modal-title">${d.title}</h1>
+    <div class="modal-subtitle">${d.subtitle}</div>
+    <div class="modal-meta">
+      <div class="modal-meta-item"><div class="modal-meta-label">Year</div><div class="modal-meta-value">${d.year}</div></div>
+      <div class="modal-meta-item"><div class="modal-meta-label">Role</div><div class="modal-meta-value">${d.role}</div></div>
+      <div class="modal-meta-item"><div class="modal-meta-label">Genre</div><div class="modal-meta-value">${d.genre}</div></div>
+      <div class="modal-meta-item"><div class="modal-meta-label">Status</div><div class="modal-meta-value">${d.no.split('—')[1]?.trim() || '—'}</div></div>
+    </div>
+  `;
+
+  // Sections
+  const sectionsHtml = (d.sections && d.sections.length)
+    ? d.sections.map(s => `
+        <div class="modal-section">
+          <h3>${s.h}</h3>
+          <ul>${s.items.map(i => `<li>${i}</li>`).join('')}</ul>
+        </div>
+      `).join('')
+    : '';
+
+  // Highlight
+  const highlightHtml = d.highlight
+    ? `<div class="modal-highlight">
+        <div class="modal-highlight-label">✦ ${d.highlight.label}</div>
+        <p>${d.highlight.text}</p>
+      </div>`
+    : '';
+
+  // Links
+  const linksHtml = (d.links && d.links.length)
+    ? `<div class="modal-section">
+        <h3>观看 / Visit</h3>
+        <div class="video-links">
+          ${d.links.map(l => `
+            <a class="video-link" href="${l.url}" target="_blank" rel="noopener">
+              <span class="video-link-num">${l.num}</span>
+              <span>${l.title}</span>
+              <span class="video-link-arrow">→</span>
+            </a>
+          `).join('')}
+        </div>
+      </div>`
+    : '';
+
+  modalContent.innerHTML = `${heroHtml}${metaHtml}<div class="modal-body">${d.body}</div>${highlightHtml}${sectionsHtml}${linksHtml}`;
+  modalContent.classList.toggle('has-video', !!d.video);
+  const mv = modalContent.querySelector('video');
+  if (mv) {
+    mv.muted = false;
+    mv.play().catch(() => {          // 浏览器拦截有声自动播放时，降级静音播放
+      mv.muted = true;
+      mv.play().catch(() => {});
+    });
+  }
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modalContent.querySelectorAll('video').forEach(v => v.pause());
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+
+</body></html>
